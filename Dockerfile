@@ -1,0 +1,20 @@
+FROM ubuntu:22.04
+
+# 基本ツール
+RUN apt update && apt install -y curl git wget unzip
+
+# openvscode-server を取得
+RUN wget https://github.com/gitpod-io/openvscode-server/releases/download/openvscode-server-v1.90.0/openvscode-server-v1.90.0-linux-x64.tar.gz \
+    && tar -xzf openvscode-server-v1.90.0-linux-x64.tar.gz \
+    && mv openvscode-server-v1.90.0-linux-x64 /opt/openvscode-server
+
+# 作業ディレクトリ
+RUN mkdir -p /workspace
+WORKDIR /workspace
+
+# 起動スクリプト
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+EXPOSE 8080
+CMD ["/start.sh"]
