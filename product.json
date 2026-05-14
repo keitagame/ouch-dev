@@ -1,0 +1,6 @@
+{
+  "nameShort": "ouchi-web",
+  "nameLong": "Ouchi-Web",
+  "remoteName": "ouchi-web",
+  "extensionAllowedProposedApi": ["*"]
+}
