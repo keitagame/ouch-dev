@@ -4,7 +4,3 @@ services:
     env: docker
     plan: free
     region: singapore
-    disk:
-      name: workspace
-      mountPath: /workspace
-      sizeGB: 1
