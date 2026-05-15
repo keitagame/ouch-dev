@@ -11,7 +11,7 @@ RUN curl -sS https://starship.rs/install.sh | sh
 RUN cp -r .bashrc ~/.bashrc 
 # 作業ディレクトリ
 COPY product.json /opt/openvscode-server/product.json
-
+RUN starship preset catppuccin-powerline -o ~/.config/starship.toml
 RUN mkdir -p /workspace
 WORKDIR /workspace
 
