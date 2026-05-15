@@ -8,7 +8,7 @@ RUN wget https://github.com/gitpod-io/openvscode-server/releases/download/openvs
     && tar -xzf openvscode-server-v1.90.0-linux-x64.tar.gz \
     && mv openvscode-server-v1.90.0-linux-x64 /opt/openvscode-server
 RUN curl -sS https://starship.rs/install.sh | sh
-
+RUN cp -r .bashrc ~/.bashrc 
 # 作業ディレクトリ
 COPY product.json /opt/openvscode-server/product.json
 
