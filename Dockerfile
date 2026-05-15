@@ -7,8 +7,8 @@ RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
 RUN wget https://github.com/gitpod-io/openvscode-server/releases/download/openvscode-server-v1.90.0/openvscode-server-v1.90.0-linux-x64.tar.gz \
     && tar -xzf openvscode-server-v1.90.0-linux-x64.tar.gz \
     && mv openvscode-server-v1.90.0-linux-x64 /opt/openvscode-server
+COPY .bashrc /root/.bashrc
 
-RUN cp -r .bashrc ~/.bashrc 
 # 作業ディレクトリ
 COPY product.json /opt/openvscode-server/product.json
 RUN starship preset catppuccin-powerline -o ~/.config/starship.toml
