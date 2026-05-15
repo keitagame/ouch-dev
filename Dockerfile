@@ -11,7 +11,7 @@ COPY .bashrc /root/.bashrc
 
 # 作業ディレクトリ
 COPY product.json /opt/openvscode-server/product.json
-RUN starship preset catppuccin-powerline -o ~/.config/starship.toml
+RUN mkdir -p /root/.config && starship preset catppuccin-powerline -o /root/.config/starship.toml
 RUN mkdir -p /workspace
 WORKDIR /workspace
 
