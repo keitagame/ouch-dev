@@ -3,4 +3,5 @@
   "nameLong": "Ouchi-Web",
   "remoteName": "ouchi-web",
   "extensionAllowedProposedApi": ["*"]
+
 }
