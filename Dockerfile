@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Starship のインストール
 RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
 
-# openvscode-server の取得と展開（ダウンロードアーカイブは即時削除）
-RUN wget "https://github.com/gitpod-io/openvscode-server/releases/download/${OPENVSCODE_VERSION}/openvscode-server-${OPENVSCODE_VERSION}-linux-x64.tar.gz" \
+# openvscode-server の取得と展開（リリースタグ名の openvscode-server- を指定）
+RUN wget "https://github.com/gitpod-io/openvscode-server/releases/download/openvscode-server-${OPENVSCODE_VERSION}/openvscode-server-${OPENVSCODE_VERSION}-linux-x64.tar.gz" \
     && tar -xzf "openvscode-server-${OPENVSCODE_VERSION}-linux-x64.tar.gz" \
     && mv "openvscode-server-${OPENVSCODE_VERSION}-linux-x64" /opt/openvscode-server \
     && rm "openvscode-server-${OPENVSCODE_VERSION}-linux-x64.tar.gz"
