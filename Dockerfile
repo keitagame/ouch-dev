@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     unzip \
     cmake \
-    build-essential \
+    build-essential npm nodejs \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
