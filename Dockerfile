@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 
 # ビルド引数と非対話モードの設定
-ARG OPENVSCODE_VERSION="v1.97.0"
+ARG OPENVSCODE_VERSION="v1.98.2"
 ENV DEBIAN_FRONTEND=noninteractive
 
 # 基本ツールのインストールとパッケージキャッシュの削除
@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Starship のインストール
 RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
 
-# openvscode-server の取得と展開（リリースタグ名の openvscode-server- を指定）
+# openvscode-server の取得と展開
 RUN wget "https://github.com/gitpod-io/openvscode-server/releases/download/openvscode-server-${OPENVSCODE_VERSION}/openvscode-server-${OPENVSCODE_VERSION}-linux-x64.tar.gz" \
     && tar -xzf "openvscode-server-${OPENVSCODE_VERSION}-linux-x64.tar.gz" \
     && mv "openvscode-server-${OPENVSCODE_VERSION}-linux-x64" /opt/openvscode-server \
